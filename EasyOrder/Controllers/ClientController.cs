@@ -1,11 +1,6 @@
 ﻿using EasyOrder.Models.Entities;
 using EasyOrder.Models.Exceptions;
 using EasyOrder.Validators;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EasyOrder.Controllers
 {
@@ -14,9 +9,8 @@ namespace EasyOrder.Controllers
         public Client CreateClient(string name, string email, DateTime registrationDate)
         {
             if (EntityValidator<Client>.IsValidName(name))
-                throw new EntityException("Informe um nome válido!");
+                throw new EntityException("Informe um nome válido para o cliente!");
 
-          
             if (EntityValidator<Client>.IsValidEmail(email))
                 throw new EntityException("Informe um e-mail válido!");
             

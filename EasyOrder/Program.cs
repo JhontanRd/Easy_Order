@@ -15,8 +15,11 @@ namespace EasyOrder
                 ClientController ct = new ClientController();
                 Client client = ct.CreateClient("Jhonatan", "jhon.devbr@gmail.com", new DateTime(2026, 1, 17, 0, 0, 0)); // Status OK
 
+                ProductController pc = new ProductController();
+                Product product = pc.CreateProduct("Playstation 5", 3899.99m, 13); // Status OK
 
                 Console.WriteLine(client);
+                Console.WriteLine(product);
             }
             catch (EntityException ex)
             {

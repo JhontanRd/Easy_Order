@@ -1,11 +1,4 @@
-﻿using EasyOrder.Models.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EasyOrder.Validators
+﻿namespace EasyOrder.Validators
 {
     public static class EntityValidator<T> where T : class
     {
@@ -22,6 +15,16 @@ namespace EasyOrder.Validators
         public static bool IsValidDate(DateTime registrationDate)
         {
             return registrationDate < DateTime.Now ? true : false;
+        }
+        
+        public static bool IsValidPrice(decimal price)
+        {
+            return price < 0.0m ? true : false;
+        }
+        
+        public static bool IsValidStockQuantity(int stock)
+        {
+            return stock < 0 ? true : false;
         }
     }
 }
